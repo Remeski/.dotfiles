@@ -11,7 +11,7 @@ if [ -f $HOME/.tmux.conf ]; then
 	echo ".tmux.conf exists, remove it first (or backup), continue? (enter)"
 	read
 else
-	ln -s $PWD/tmux.conf $HOME/.tmux.conf
+	ln -s $PWD/.tmux.conf $HOME/.tmux.conf
 fi
 
 echo "Installing .config files..."
@@ -20,5 +20,4 @@ if [ ! -d $HOME/.config ]; then
 fi
 echo "Creating symlinks..."
 ln -s $PWD/.config/nvim $HOME/.config/nvim
-ln -s $PWD/.config/poshthemes $HOME/.config/poshthemes
 echo "Done!"

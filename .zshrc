@@ -1,14 +1,14 @@
 
-export XDG_CONFIG_HOME=~/.config/
+export XDG_CONFIG_HOME=$HOME/.config
 
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 export PATH=$PATH:/usr/local/go/bin
 
 # Uncomment if node is installed (tbh I don't is this required... this some random shit I found and without all hell breaks loose)
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -17,7 +17,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 ZSH_THEME="robbyrussell"
 
-eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/poshthemes/space.omp.json)"
+# eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/poshthemes/space.omp.json)"
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 DISABLE_MAGIC_FUNCTIONS="true"
