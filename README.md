@@ -14,6 +14,7 @@
 #### tmux 
 
 - Install TPM to tmux so that other plugins will load
+- Install fzf
 
 #### After that
 
