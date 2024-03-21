@@ -19,8 +19,9 @@ echo "Installing .config files..."
 if [ ! -d $HOME/.config ]; then
 	mkdir $HOME/.config
 fi
-ln -s $PWD/.config/nvim $HOME/.config/nvim
-echo "Done!"
+if [ ! -d $HOME/.config/nvim ]; then
+	ln -s $PWD/.config/nvim $HOME/.config/nvim
+fi
 
 echo "Installing custom scripts..."
 if [ ! -d $HOME/.local/scripts ]; then
@@ -29,3 +30,5 @@ if [ ! -d $HOME/.local/scripts ]; then
 		ln -s $PWD/scripts/$script $HOME/.local/scripts/$script
 	done
 fi
+
+echo "Alls good"

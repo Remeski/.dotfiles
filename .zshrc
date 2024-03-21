@@ -40,8 +40,12 @@ bindkey -r '^P'
 bindkey -r '^N'
 
 alias vim=nvim
+alias arduino="cd /mnt/c/Users/eelir/Documents/Arduino/"
+alias acli=arduino-cli
 
 # If you want tmux to automatically open
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 # exec tmux
 # fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

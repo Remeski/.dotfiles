@@ -16,3 +16,6 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 vim.keymap.set("n", "<C-w>z", "<C-w>|<C-w>_", { desc = "Zoom in pane" })
 vim.keymap.set("n", "<C-w>Z", "<C-w>=", { desc = "Zoom in pane" })
+
+vim.keymap.set("n", "<C-N>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-P>", "<cmd>cprev<CR>")
