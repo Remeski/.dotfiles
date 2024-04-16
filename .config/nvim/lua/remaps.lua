@@ -19,3 +19,5 @@ vim.keymap.set("n", "<C-w>Z", "<C-w>=", { desc = "Zoom in pane" })
 
 vim.keymap.set("n", "<C-N>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-P>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<C-N>", "<cmd>lnext<CR>")
+vim.keymap.set("n", "<C-P>", "<cmd>lprev<CR>")

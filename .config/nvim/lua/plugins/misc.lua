@@ -1,7 +1,6 @@
 return {
 	"tpope/vim-sleuth",
 	{ "numToStr/Comment.nvim", opts = {} },
-	{ "ThePrimeagen/vim-be-good" },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -24,9 +23,6 @@ return {
 			-- - sr)'  - [S]urround [R]eplace [)] [']
 			require("mini.surround").setup()
 
-			-- Simple and easy statusline.
-			--  You could remove this setup call if you don't like it,
-			--  and try some other statusline plugin
 			require("mini.statusline").setup()
 			require("mini.statusline").section_location = function()
 				return "%2l:%-2v"
@@ -39,12 +35,26 @@ return {
 			vim.keymap.set("n", "<F5>", "<Cmd>UndotreeToggle<CR>")
 		end,
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	-- 	ft = { "markdown" },
-	-- 	build = function()
-	-- 		vim.fn["mkdp#util#install"]()
-	-- 	end,
-	-- },
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+	},
+	{ "tpope/vim-fugitive" },
+	{ "ThePrimeagen/vim-be-good" },
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 }

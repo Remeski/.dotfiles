@@ -8,6 +8,7 @@ if [ -f $HOME/.zshrc ]; then
 else
 	ln -s $PWD/.zshrc $HOME/.zshrc
 fi
+
 if [ -f $HOME/.tmux.conf ]; then
 	echo ".tmux.conf exists, remove it first (or backup), continue? (enter)"
 	read
@@ -26,9 +27,10 @@ fi
 echo "Installing custom scripts..."
 if [ ! -d $HOME/.local/scripts ]; then
 	mkdir $HOME/.local/scripts
-	for script in $(ls $PWD/scripts); do
-		ln -s $PWD/scripts/$script $HOME/.local/scripts/$script
-	done
 fi
+
+for script in $(ls $PWD/scripts | grep .sh); do
+	ln -s $PWD/scripts/$script $HOME/.local/scripts/$script
+done
 
 echo "Alls good"
