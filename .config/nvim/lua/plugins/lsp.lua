@@ -1,6 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"b0o/schemastore.nvim",
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -50,7 +51,36 @@ return {
 			},
 			gopls = {},
 			pyright = {},
-			-- rust_analyzer = {},
+			ansiblels = {
+				cmd = {
+					"/home/eeli/vscode-ansible/packages/ansible-language-server/bin/ansible-language-server",
+					"--stdio",
+				},
+			},
+			jsonls = {
+				capabilities = {
+					textDocument = {
+						completion = {
+							completionItem = {
+								snippetSupport = true,
+							},
+						},
+					},
+				},
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas({
+							select = {
+								".eslintrc",
+								"package.json",
+								"tsconfig.json",
+							},
+						}),
+						validate = { enable = true },
+					},
+				},
+			},
+			rust_analyzer = {},
 			tsserver = {
 				root_dir = require("lspconfig.util").root_pattern(".git"),
 			},

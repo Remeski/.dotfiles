@@ -3,7 +3,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/home/eeli/.local/bin
 
 # Uncomment if node is installed (tbh I don't is this required... this some random shit I found and without all hell breaks loose)
 export NVM_DIR="$HOME/.nvm"
@@ -49,3 +49,6 @@ alias acli=arduino-cli
 # fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2024-04-17 09:09:52
+export PATH="$PATH:/home/eeli/.local/bin"

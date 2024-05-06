@@ -5,14 +5,35 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
 		config = function()
 			vim.cmd.colorscheme("tokyonight-night")
 			vim.cmd.hi("Comment gui=none")
+			-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+			-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 		end,
 	},
+	{
+		"xiyaowong/transparent.nvim",
+		opts = {
+			extra_groups = {
+				"TelescopePromptNormal",
+				"TelescopeMatching",
+				"TelescopeSelection",
+				"TelescopePromptTitle",
+				"TelescopePromptPrefix",
+				"TelescopePromptCounter",
+				"TelescopePromptNormal",
+				"TelescopePromptBorder",
+				"TelescopeResultsTitle",
+				"TelescopeResultsNormal",
+				"TelescopeResultsBorder",
+				"TelescopePreviewTitle",
+				"TelescopePreviewNormal",
+				"TelescopePreviewBorder",
+			},
+		},
+	},
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
-
 	{
 		"echasnovski/mini.nvim",
 		config = function()
@@ -23,10 +44,12 @@ return {
 			-- - sr)'  - [S]urround [R]eplace [)] [']
 			require("mini.surround").setup()
 
-			require("mini.statusline").setup()
-			require("mini.statusline").section_location = function()
-				return "%2l:%-2v"
-			end
+			-- require("mini.statusline").setup()
+
+			-- miniS.setup()
+			-- miniS.section_location = function()
+			-- 	return "%2l:%-2v"
+			-- end
 		end,
 	},
 	{

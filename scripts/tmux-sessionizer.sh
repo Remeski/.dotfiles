@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-	selected=$(find ~/ ~/coding/ ~/coding/etremes ~/$(which arduino | awk -F' '  '{ print $5 }') -mindepth 1 -maxdepth 3 -type d | fzf)
+	selected=$(find /mnt/c/Users/eelir/ ~/ ~/coding/ ~/coding/etremes ~/$(which arduino | awk -F' '  '{ print $5 }') -mindepth 1 -maxdepth 3 -type d | fzf)
 
 fi
 
