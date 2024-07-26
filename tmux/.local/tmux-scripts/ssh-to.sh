@@ -21,10 +21,6 @@ get_session_ssh () {
     echo ""
 }
 
-if [[ ! -f $conf_path ]]; then
-    echo "Supply a servers.conf file in $HOME/.local/scripts/"
-    exit 1
-fi
 
 if [[ ! -z "$1" ]]; then
     SSH=$(get_session_ssh)
@@ -36,6 +32,11 @@ if [[ ! -z "$1" ]]; then
     tmux $1 "ssh $LOCATION"
 
 else
+
+    if [[ ! -f $conf_path ]]; then
+	echo "Supply a servers.conf file in $HOME/.local/scripts/"
+	exit 1
+    fi
 
     SELECTED=$(cat $conf_path | awk '{ print $1 }' | fzf)
     LOCATION=$(get_location $SELECTED)

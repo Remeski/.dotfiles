@@ -1,9 +1,10 @@
-## Remeski dotfiles
+## Remeski dotfiles -- STOW
 
 ### Requirements
 
 - a Nerdfont installed
 - oh-my-zsh
+- gnu stow
 
 ### Installing
 
@@ -16,7 +17,8 @@
 - Install TPM to tmux so that other plugins will load
 - Install fzf
 
-#### After that
+### Using STOW
 
-- `install.sh` will place soft links to correct places (if it works?)
+- run `stow \[target\]` to install symlinks to correct places
+
 

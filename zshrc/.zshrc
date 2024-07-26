@@ -3,7 +3,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
-export PATH=$PATH:/usr/local/go/bin:/home/eeli/.local/bin
+export PATH=$PATH:/usr/local/go/bin:/home/eeli/.local/bin:/home/eeli/.local/share/gem/ruby/3.0.0/bin
 
 # Uncomment if node is installed (tbh I don't is this required... this some random shit I found and without all hell breaks loose)
 export NVM_DIR="$HOME/.nvm"
