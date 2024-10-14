@@ -19,7 +19,7 @@ set $background #000000
 set $color_urgent #ff4499
 set $text_color #ffffff
 set $title_bg_unfocused #000000
-set $title_outline_active #6e20f5
+set $title_outline_active #30558f
 set $title_outline_unfocused #3b3b3b
 
 # Set Colors:           Border                   Background          Text          Indicator             Child Border
@@ -30,8 +30,8 @@ client.unfocused        $title_outline_unfocused $title_bg_unfocused $text_color
 client.urgent           $color_urgent            $color_urgent       $color_urgent $color_urgent         $color_urgent
 
 # Add gaps in between all application windows:
-gaps inner 8
-gaps outer 3
+gaps inner 3
+gaps outer 0
 
 # Configure the default border:
 default_border pixel 1
@@ -42,7 +42,7 @@ default_border pixel 1
 # output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # output * bg /home/eeli/Pictures/Bgs/AdobeStock_700913020.jpeg fill
 
-font pango:"FiraCode Nerd Font Mono" medium 20
+font pango:"FiraCode Nerd Font Mono" medium 10
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:monospace 8
@@ -51,8 +51,23 @@ font pango:"FiraCode Nerd Font Mono" medium 20
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-exec "setxkbmap -layout fi -option caps:escape"
-exec "xinput \"ASUE120B:00 04F3:31C0 Touchpad\" 315 1"
+exec --no-startup-id picom -D 0
+exec --no-startup-id setxkbmap -layout fi -option caps:escape
+
+# mousepad settings
+
+# sensitivity
+exec --no-startup-id xinput set-prop "ASUE120B:00 04F3:31C0 Touchpad" "libinput Accel Speed" 0.5
+# middle emulation
+#exec --no-startup-id xinput set-prop "ASUE120B:00 04F3:31C0 Touchpad" "libinput Middle Emulation Enabled" 1
+# tapping
+exec --no-startup-id xinput set-prop "ASUE120B:00 04F3:31C0 Touchpad" "libinput Tapping Enabled" 1
+# natural scroll
+exec --no-startup-id xinput set-prop "ASUE120B:00 04F3:31C0 Touchpad" "libinput Natural Scrolling Enabled" 1
+# click mehthods (buttonareas)
+exec --no-startup-id xinput set-prop "ASUE120B:00 04F3:31C0 Touchpad" "libinput Click Method Enabled" 1 0
+
+exec --no-startup-id feh --bg-fill /home/eeli/Pictures/Bgs/blackhole.jpeg
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -67,7 +82,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -75,6 +89,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86MonBrightnessUp exec "brightnessctl s +10%"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -90,7 +108,8 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show combi
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -149,8 +168,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1 "
+set $ws2 "2 󰖟"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -158,31 +177,33 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10 "
+
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/kitty tmux; workspace $ws2; exec /usr/bin/firefox; workspace $ws10; exec /usr/bin/pavucontrol; workspace $ws10; exec /usr/bin/spotify-launcher'
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -218,10 +239,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+
+workspace $ws6 output eDP-1
+workspace $ws7 output eDP-1
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command polybar
+#}
 
-exec picom
+exec_always --no-startup-id polybar
