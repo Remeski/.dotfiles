@@ -21,7 +21,10 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.wrap = false
 vim.opt.hlsearch = true
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 8
+vim.opt.expandtab = false
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",

@@ -3,14 +3,9 @@
 ### Requirements
 
 - a Nerdfont installed
-- oh-my-zsh
 - gnu stow
 
 ### Installing
-
-#### oh-my-zsh
-
-- Install zsh-autosuggestions plugin into plugins folder
 
 #### tmux 
 
