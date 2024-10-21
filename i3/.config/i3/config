@@ -182,7 +182,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10 "
 
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/kitty tmux; workspace $ws2; exec /usr/bin/firefox; workspace $ws10; exec /usr/bin/pavucontrol'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/kitty tmux; workspace $ws2; exec /usr/bin/firefox'
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

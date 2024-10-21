@@ -29,11 +29,11 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# Binds
+bindkey -v # vi mode
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
-
-# Vi mode
-bindkey -v
 
 # zsh-completions
 autoload -U compinit && compinit

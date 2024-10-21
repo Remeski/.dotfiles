@@ -40,7 +40,7 @@
 	},
 	"custom/disk_root": {
 		"format": "💽 {} ",
-		"interval": 30,
+		"interval": 31,
 		"exec": "df -h --output=avail / | tail -1 | tr -d ' '"
 	},
 	"temperature": {

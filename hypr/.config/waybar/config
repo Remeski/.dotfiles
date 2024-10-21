@@ -1,0 +1,55 @@
+{
+  "position": "top",
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-right": ["pulseaudio", "battery", "network", "clock"],
+  "clock": {
+		"interval": 1,
+		"format": "{:%Y-%m-%d %H:%M:%S}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "hyprland/workspaces": {
+		"format-icons": {
+				"1": "",
+				"2": "󰖟",
+				"10": "",
+				"default": "󰹑"
+		},
+		"format": "{id} {icon}",
+  },
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+	"interval": 5,
+    "format": "<span size='11000' foreground='#7940ff'>BAT</span> {capacity}% {icon} ",
+    "format-critical": "<span size='11000' foreground='#7940ff'>BAT</span> <span foreground='#ff0a0a'>{capacity}% {icon}</span> ",
+    "format-warning": "<span size='11000' foreground='#7940ff'>BAT</span> {capacity}% {icon} ",
+    "format-charging": "<span size='11000' foreground='#7940ff'>BAT</span> {capacity}% 󰂄 ",
+    "format-plugged": "<span size='11000' foreground='#7940ff'>BAT</span> {capacity}% 󰂄 ",
+    "format-full": "<span size='11000' foreground='#7940ff'>BAT</span> {capacity}% {icon} ",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "network": {
+    "format-wifi": "<span size='11000' foreground='#f0c674'>{ifname} </span> {essid} ({ipaddr}) ",
+    "format-ethernet": "<span size='11000' foreground='#f0c674'>{ifname} </span> {ipaddr} ",
+    "format-linked": "<span size='11000' foreground='#f0c674'>{ifname} </span> (No IP) ",
+    "format-disconnected": "<span size='11000' foreground='#808080'></span> disconnected ",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format": "<span size='11000' foreground='#7940ff'>VOL</span> {volume}% {icon} ",
+    "format-muted": "<span size='11000' foreground='#808080'> {volume}% {icon}</span> ",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    }
+  }
+}

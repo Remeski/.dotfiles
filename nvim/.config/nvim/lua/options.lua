@@ -23,7 +23,7 @@ vim.opt.wrap = false
 vim.opt.hlsearch = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 8
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 
 vim.api.nvim_create_autocmd("TextYankPost", {
