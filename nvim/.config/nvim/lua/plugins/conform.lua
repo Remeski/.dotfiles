@@ -14,5 +14,10 @@ return {
 			typescript = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
 		},
+		formatters = {
+			black = {
+				append_args = { "--line-length", "200" },
+			},
+		},
 	},
 }

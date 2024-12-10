@@ -34,29 +34,26 @@ return {
 		},
 	},
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
-	{
-		"echasnovski/mini.nvim",
-		config = function()
-			require("mini.ai").setup({ n_lines = 500 })
-			-- Add/delete/replace surroundings (brackets, quotes, etc.)
-			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-			-- - sd'   - [S]urround [D]elete [']quotes
-			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup()
-
-			-- require("mini.statusline").setup()
-
-			-- miniS.setup()
-			-- miniS.section_location = function()
-			-- 	return "%2l:%-2v"
-			-- end
-		end,
-	},
+	-- {
+	-- 	"echasnovski/mini.nvim",
+	-- 	config = function()
+	-- 		require("mini.ai").setup({ n_lines = 500 })
+	-- 		-- Add/delete/replace surroundings (brackets, quotes, etc.)
+	-- 		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+	-- 		-- - sd'   - [S]urround [D]elete [']quotes
+	-- 		-- - sr)'  - [S]urround [R]eplace [)] [']
+	-- 		require("mini.surround").setup()
+	--
+	-- 		-- require("mini.statusline").setup()
+	--
+	-- 		-- miniS.setup()
+	-- 		-- miniS.section_location = function()
+	-- 		-- 	return "%2l:%-2v"
+	-- 		-- end
+	-- 	end,
+	-- },
 	{
 		"mbbill/undotree",
-		config = function()
-			vim.keymap.set("n", "<F5>", "<Cmd>UndotreeToggle<CR>")
-		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",

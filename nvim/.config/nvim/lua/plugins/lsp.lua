@@ -52,10 +52,30 @@ return {
 			gopls = {},
 			pyright = {},
 			ansiblels = {
-				cmd = {
-					"/home/eeli/vscode-ansible/packages/ansible-language-server/bin/ansible-language-server",
-					"--stdio",
+				cmd = { "ansible-language-server", "--stdio" },
+				settings = {
+					ansible = {
+						python = {
+							interpreterPath = "python",
+						},
+						ansible = {
+							path = "ansible",
+						},
+						executionEnvironment = {
+							enabled = false,
+						},
+						validation = {
+							enabled = true,
+							lint = {
+								enabled = true,
+								path = "ansible-lint",
+							},
+						},
+					},
 				},
+				filetypes = { "yml", "yaml" },
+				root_dir = require("lspconfig.util").root_pattern("ansible.cfg", ".ansible-lint"),
+				single_file_support = true,
 			},
 			jsonls = {
 				capabilities = {
@@ -81,7 +101,7 @@ return {
 				},
 			},
 			rust_analyzer = {},
-			tsserver = {
+			["typescript-language-server"] = {
 				root_dir = require("lspconfig.util").root_pattern(".git"),
 			},
 			["arduino-language-server"] = {
