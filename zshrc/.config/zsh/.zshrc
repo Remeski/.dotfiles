@@ -43,6 +43,8 @@ zstyle ':completion:*' list-colors "$LS_COLORS"
 # fzf integration
 eval "$(fzf --zsh)"
 
+eval "$(zoxide init zsh)"
+
 # Aliases
 alias vim=nvim
 alias arduino="cd /mnt/c/Users/eelir/Documents/Arduino/"
