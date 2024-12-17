@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-	selected=$(find /mnt/storage /mnt/c/Users/eelir/ ~/ ~/coding/ ~/coding/etremes ~/$(which arduino | awk -F' '  '{ print $5 }') -mindepth 1 -maxdepth 5 -type d | fzf)
+	selected=$(find /mnt/storage ~/ ~/coding/ ~/coding/etremes  -mindepth 1 -maxdepth 5 -type d | fzf --reverse --print-query)
 
 fi
 
@@ -14,6 +14,12 @@ if [[ -z $selected ]]; then
 fi
 
 selected_name=$(basename "$selected" | tr . _)
+
+if [[ "${selected:0:1}" == ">" ]]; then
+    selected=${selected:1}
+    selected_name=$selected
+fi
+
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
