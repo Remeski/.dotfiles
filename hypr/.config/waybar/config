@@ -23,12 +23,12 @@
       "critical": 10
     },
 	"interval": 5,
-    "format": "<span  foreground='#7940ff'>BAT</span> {capacity}% {icon} ",
-    "format-critical": "<span foreground='#7940ff'>BAT</span> <span foreground='#ff0a0a'>{capacity}% {icon}</span> ",
-    "format-warning": "<span foreground='#7940ff'>BAT</span> {capacity}% {icon} ",
-    "format-charging": "<span foreground='#7940ff'>BAT</span> {capacity}% 󰂄 ",
-    "format-plugged": "<span foreground='#7940ff'>BAT</span> {capacity}% 󰂄 ",
-    "format-full": "<span foreground='#7940ff'>BAT</span> {capacity}% {icon} ",
+    "format": "<span foreground='#fe8019'>BAT</span> {capacity}% {icon} ",
+    "format-critical": "<span foreground='#fe8019'>BAT</span> <span foreground='#fb4934'>{capacity}% {icon}</span> ",
+    "format-warning": "<span foreground='#fe8019'>BAT</span> {capacity}% {icon} ",
+    "format-charging": "<span foreground='#fe8019'>BAT</span> {capacity}% 󰂄 ",
+    "format-plugged": "<span foreground='#fe8019'>BAT</span> {capacity}% 󰂄 ",
+    "format-full": "<span foreground='#fe8019'>BAT</span> {capacity}% {icon} ",
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{time}"
   },
@@ -42,7 +42,7 @@
   },
   "pulseaudio": {
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "format": "<span  foreground='#7940ff'>VOL</span> {volume}% {icon} ",
+    "format": "<span  foreground='#fe8019'>VOL</span> {volume}% {icon} ",
     "format-muted": "<span foreground='#808080'> {volume}% {icon}</span> ",
     "format-icons": {
       "headphone": "",

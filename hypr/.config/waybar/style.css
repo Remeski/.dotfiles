@@ -12,7 +12,7 @@
 }
 
 window#waybar {
-    background: transparent;
+    background: @background;
     color: @text;
     transition-property: background-color;
     transition-duration: 0.1s;
@@ -32,7 +32,7 @@ button {
 
 
 #workspaces button {
-    border-radius: 40;
+    border-radius: 0;
     padding: 4px 7px;
     color: @text;
 }
