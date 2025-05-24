@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-TARGET=$1
-
-echo "[+] Installing $TARGET"
 
 detect_pkg_manager () {
 if [ -f /etc/debian_version ]; then
@@ -29,9 +26,34 @@ fi
 echo "[+] Detected $PKG_MANAGER as package manager"
 }
 
+check_stow() {
+which stow &>/dev/null
+
+if [ $? == "0" ]; then
+    echo "[+] STOW seems to be installed"
+else
+    read -p "[+] STOW isn't installed. Do you want to install it (Y/n) " ack
+    ack_lowered=$(echo $ack | awk '{ print tolower($0) }')
+    if [ $ack_lowered == "y" ]; then
+        detect_pkg_manager
+        $INSTALL_CMD stow
+    fi
+fi
+}
+
+TARGET=$1
+
+if [ -z $TARGET ]; then
+    echo "Usage: $0 [target]"
+    check_stow
+    exit 1
+fi
+
+echo "[+] Installing $TARGET"
+
 if [ -f "${TARGET}/install.sh" ]; then
     echo "[+] Running ${TARGET}/install.sh"
-    bash ${TARGET}/install.sh
+    ./${TARGET}/install.sh
 fi
 if [ -f "${TARGET}/packages.txt" ]; then
     detect_pkg_manager
@@ -41,6 +63,7 @@ if [ -f "${TARGET}/packages.txt" ]; then
     $INSTALL_CMD "$PACKAGES"
 fi
 if [ -d "${TARGET}/stow" ]; then
+    check_stow
     echo "[+] Running stow on $TARGET"
     stow -d $TARGET -t $HOME stow
 fi
