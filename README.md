@@ -1,4 +1,4 @@
-# .dotfilesv2 - Newer better .dotfiles
+# Newer and better .dotfiles
 
 Requires `stow`. `install.sh` will check if it's installed.
 
