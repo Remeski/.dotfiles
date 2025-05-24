@@ -34,7 +34,7 @@ if [ $? == "0" ]; then
 else
     read -p "[+] STOW isn't installed. Do you want to install it (Y/n) " ack
     ack_lowered=$(echo $ack | awk '{ print tolower($0) }')
-    if [ $ack_lowered == "y" ]; then
+    if [[ $ack_lowered != "n" ]]; then
         detect_pkg_manager
         $INSTALL_CMD stow
     fi
