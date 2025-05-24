@@ -1,0 +1,6 @@
+hyprland
+hyprpaper
+hyprlock
+hypridle
+rofi
+kitty

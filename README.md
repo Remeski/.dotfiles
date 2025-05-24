@@ -1,19 +1,5 @@
-## Remeski dotfiles -- STOW
+# .dotfilesv2 - Newer better .dotfiles
 
-### Requirements
+Requires `stow`.
 
-- a Nerdfont installed
-- gnu stow
-
-### Installing
-
-#### tmux 
-
-- Install TPM to tmux so that other plugins will load
-- Install fzf
-
-### Using STOW
-
-- run `stow \[target\]` to install symlinks to correct places
-
-
+Usage: `./install.sh [TARGET]`

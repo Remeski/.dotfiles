@@ -1,0 +1,8 @@
+@import "themes/nord.css";
+
+* {
+    font-family: "FiraCode Nerd Font Mono";
+    font-size: 13px;
+    min-height: 0;
+    font-weight: normal;
+}

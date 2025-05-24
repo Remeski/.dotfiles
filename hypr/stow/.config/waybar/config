@@ -1,0 +1,65 @@
+{
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network#internet", "network#etremes", "pulseaudio", "battery"],
+  "clock": {
+		"interval": 1,
+		"format": "{:%H:%M:%S}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "hyprland/workspaces": {
+		"format-icons": {
+				"1": "",
+				"2": "󰖟",
+				"9": "󰛳",
+				"10": "",
+				"default": "󰹑"
+		},
+		"format": "{id}",
+  },
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+	"interval": 5,
+    "format": "{capacity}% {icon} ",
+    "format-critical": "<span foreground='#fb4934'>{capacity}% {icon}</span> ",
+    "format-warning": "{capacity}% {icon} ",
+    "format-charging": "{capacity}% 󰂄 ",
+    "format-plugged": "{capacity}% 󰂄 ",
+    "format-full": "{capacity}% {icon} ",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "network#internet": {
+	"interval": 3,
+    "format-wifi": "<span foreground='#f1c674'>{ifname}</span> {essid} ",
+    "format-ethernet": "<span foreground='#7940ff'></span> <span foreground='#f0c674'>{ifname}</span> ",
+    "format-linked": "<span foreground='#7940ff'></span> <span foreground='#f0c674'>{ifname}</span> (No IP) ",
+    "format-disconnected": "<span foreground='#808080'></span> disconnected ",
+    "tooltip-format-wifi": "IP: {ipaddr} ({bandwidthTotalBytes})"
+  },
+  "network#etremes": {
+	"interval": 3,
+    "interface": "etremes",
+    "format-ethernet": "<span foreground='#7940ff'></span> <span foreground='#f0c674'>{ifname}</span> ",
+    "format-disconnected": "",
+    "tooltip-format-wifi": "IP: {ipaddr} ({bandwidthTotalBytes})"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format": "{volume}% {icon} ",
+    "format-muted": "<span foreground='#808080'> {volume}% {icon}</span> ",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    }
+  }
+}

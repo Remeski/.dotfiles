@@ -1,0 +1,4 @@
+* {
+    font: "FiraCoda Nerd Font 16";
+}
+@import "~/.config/rofi/themes/nord.rasi"
