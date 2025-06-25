@@ -50,7 +50,8 @@ return {
 
 		require("lualine").setup({
 			options = {
-				theme = "gruvbox_dark",
+				-- theme = "gruvbox_dark",
+				theme = "nord",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {

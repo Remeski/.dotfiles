@@ -60,7 +60,7 @@ if [ -f "${TARGET}/packages.txt" ]; then
     PACKAGES=$(tr '\n' ' ' < ${TARGET}/packages.txt)
     echo "[+] Installing packages: $PACKAGES"
     echo "  [+] Running: $INSTALL_CMD "$PACKAGES""
-    $INSTALL_CMD "$PACKAGES"
+    $INSTALL_CMD $PACKAGES
 fi
 if [ -d "${TARGET}/stow" ]; then
     check_stow
