@@ -2,5 +2,8 @@ hyprland
 hyprpaper
 hyprlock
 hypridle
+hyprshot
+bluetui
+pulsemixer
 rofi
 kitty
