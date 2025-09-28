@@ -6,7 +6,8 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = false
 vim.o.signcolumn = "yes"
-vim.opt.undofile = true
+vim.o.undofile = true
+vim.o.ignorecase = true
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -58,6 +59,8 @@ end)
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		vim.keymap.set("n", "gf", vim.lsp.buf.format)
+		vim.keymap.set("n", "<leader>E", vim.diagnostic.setqflist)
   end,
 })
 

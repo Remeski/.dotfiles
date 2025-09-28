@@ -1,5 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export EDITOR=nvim
-export PATH=$HOME/.cargo/bin:${$(rustup which rust-analyzer)%/*}:$PATH
+export PATH=$HOME/.cargo/bin:${$(rustup which rust-analyzer)%/*}:${$(rustup which cargo)%/}:$PATH
 . "$HOME/.local/share/bob/env/env.sh"
