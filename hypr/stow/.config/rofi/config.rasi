@@ -1,5 +1,5 @@
 configuration{
-    modi: "drun,window";
+    modi: "drun";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "kitty";
@@ -8,8 +8,6 @@ configuration{
     disable-history: false;
     hide-scrollbar: true;
     display-drun: " 🏃  Run ";
-    display-run: " 🏃  Run (all) ";
-    display-window: " 🪟  Window ";
     sidebar-mode: true;
 }
 

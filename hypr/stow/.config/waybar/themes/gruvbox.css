@@ -1,3 +1,5 @@
+@import ../colors.css;
+
 @define-color primary #fe8019;
 @define-color text #fbf1c7;
 @define-color background #282828;

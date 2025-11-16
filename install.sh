@@ -15,7 +15,7 @@ elif [ -f /etc/redhat-release ]; then
     fi
 elif [ -f /etc/arch-release ] || grep -qi 'arch' /etc/os-release 2>/dev/null; then
     PKG_MANAGER="pacman"
-    INSTALL_CMD="sudo pacman -S --noconfirm"
+    INSTALL_CMD="sudo pacman -S --noconfirm --needed"
 elif [ "$(uname)" = "Darwin" ]; then
     PKG_MANAGER="brew"
     INSTALL_CMD="brew install"

@@ -1,4 +1,115 @@
+@import "./colors.rasi"
 * {
     font: "FiraCoda Nerd Font 16";
 }
-@import "~/.config/rofi/themes/nord.rasi"
+// @import "~/.config/rofi/themes/gruvbox.rasi"
+
+// * {
+//     bg-col:  #0e0e0e;
+//     bg-col-light: #0a0a0a;
+//     border-col: #303030;
+//     selected-col: #0e0e0e;
+//     blue: #fe8019;
+//     fg-col: #cdd6f4;
+//     fg-col2: #f38ba8;
+//     grey: #6c7086;
+//     width: 600;
+// }
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    border: 3px;
+    border-color: @surface-container;
+    background-color: @surface-dim;
+}
+
+mainbox {
+    background-color: @surface;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @surface;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @primary;
+    padding: 6px;
+    text-color: @on-primary;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @on-surface;
+    background-color: @surface;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @surface;
+}
+
+element {
+    padding: 5px;
+    background-color: @surface;
+    text-color: @on-surface;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @secondary;
+    text-color: @on-secondary;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @surface;
+    text-color: @on-surface;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @surface;
+  text-color: @on-surface;
+}
+
+message {
+    background-color: @surface;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @on-surface;
+    background-color: @surface;
+}

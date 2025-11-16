@@ -5,5 +5,4 @@ hypridle
 hyprshot
 bluetui
 pulsemixer
-rofi
 kitty

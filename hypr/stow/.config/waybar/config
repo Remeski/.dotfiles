@@ -16,7 +16,7 @@
 				"10": "",
 				"default": "󰹑"
 		},
-		"format": "{id}",
+		"format": "{id}"
   },
   "battery": {
     "states": {

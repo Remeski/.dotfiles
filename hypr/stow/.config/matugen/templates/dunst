@@ -130,18 +130,18 @@
 
 [urgency_low]
 		timeout = 3
-		background = "#151314"
-		foreground = "#e7e1e2"
-		highlight = "#604b5c"
+		background = "{{colors.surface.default.hex}}"
+		foreground = "{{colors.on_surface.default.hex}}"
+		highlight = "{{colors.primary_container.default.hex}}"
 
 [urgency_normal]
 		timeout = 6
-		background = "#151314"
-		foreground = "#e7e1e2"
-		highlight = "#604b5c"
+		background = "{{colors.surface.default.hex}}"
+		foreground = "{{colors.on_surface.default.hex}}"
+		highlight = "{{colors.primary_container.default.hex}}"
 
 [urgency_critical]
 		timeout = 0
-		background = "#151314"
-		foreground = "#e7e1e2"
-		highlight = "#ffb4ab"
+		background = "{{colors.surface.default.hex}}"
+		foreground = "{{colors.on_surface.default.hex}}"
+		highlight = "{{colors.error.default.hex}}"
