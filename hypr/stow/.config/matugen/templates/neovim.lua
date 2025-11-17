@@ -30,9 +30,9 @@ require('base16-colorscheme').setup({
   base08 = "{{colors.error.default.hex}}",
   base09 = "{{colors.secondary.default.hex | auto_lightness: 10.0}}",
   base0A = "{{colors.primary.default.hex}}",
-  base0B = "{{colors.primary.default.hex}}",
-  base0C = "{{colors.secondary.default.hex}}",
-  base0D = "{{colors.tertiary.default.hex}}",
+  base0B = "{{colors.secondary.default.hex}}",
+  base0C = "{{colors.tertiary.default.hex}}",
+  base0D = "{{colors.primary.default.hex}}",
   base0E = "{{colors.on_secondary_container.default.hex}}",
   base0F = "{{colors.on_error_container.default.hex}}",
 })

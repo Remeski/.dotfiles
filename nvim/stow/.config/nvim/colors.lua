@@ -1,45 +1,45 @@
 -- local config = {
---   base00 = "#141318",
---   base01 = "#0c0c0e",
---   base02 = "#c8c2e6",
---   base03 = "#19181b",
---   base04 = "#0c0b0e",
---   base05 = "#e5e1e8",
---   base06 = "#0d0b0e",
---   base07 = "#141318",
+--   base00 = "#1d100c",
+--   base01 = "#100b0a",
+--   base02 = "#ffb59f",
+--   base03 = "#1e1715",
+--   base04 = "#120a07",
+--   base05 = "#f7ddd6",
+--   base06 = "#150804",
+--   base07 = "#1d100c",
 --   base08 = "#1a0300",
---   base09 = "#ffade1",
---   base0A = "#c7bfff",
---   base0B = "#ffd8ed",
---   base0C = "#c7bfff",
---   base0D = "#0a0910",
---   base0E = "#ffffff",
---   base0F = "#e5e1e8",
+--   base09 = "#e9c343",
+--   base0A = "#ffb59f",
+--   base0B = "#ffe082",
+--   base0C = "#ffb59f",
+--   base0D = "#180701",
+--   base0E = "#000000",
+--   base0F = "#f7ddd6",
 -- }
 -- require('base16-colorscheme').setup(config)
 
 require('base16-colorscheme').setup({
-  base00 = "#141318",
-  base01 = "#0e0e12",
-  base02 = "#1c1b20",
-  base03 = "#787487",
-  base04 = "#c9c4d2",
-  base05 = "#e5e1e8",
-  base06 = "#e5e1e8",
-  base07 = "#5f5d6b",
+  base00 = "#1d100c",
+  base01 = "#170b08",
+  base02 = "#261814",
+  base03 = "#986e62",
+  base04 = "#e2bfb5",
+  base05 = "#f7ddd6",
+  base06 = "#f7ddd6",
+  base07 = "#79574e",
   base08 = "#ffb4ab",
-  base09 = "#a79ed7",
-  base0A = "#c7bfff",
-  base0B = "#c7bfff",
-  base0C = "#c8c2e6",
-  base0D = "#ffade1",
-  base0E = "#e2dcff",
+  base09 = "#ff8e6c",
+  base0A = "#ffb59f",
+  base0B = "#ffb59f",
+  base0C = "#e9c343",
+  base0D = "#ffb59f",
+  base0E = "#ffddd3",
   base0F = "#ffdad6",
 })
 
 vim.api.nvim_set_hl(0, 'Visual', {
-  bg = '#645ba5',
-  fg = '#141318',
+  bg = '#f56131',
+  fg = '#1d100c',
 })
 
 -- vim.api.nvim_set_hl(0, 'Comment', {
@@ -48,7 +48,7 @@ vim.api.nvim_set_hl(0, 'Visual', {
 -- })
 
 vim.api.nvim_set_hl(0, 'String', {
-	fg = "#ffade1"
+	fg = "#e9c343"
 })
 
 -- vim.api.nvim_set_hl(0, '@comment', {
@@ -57,5 +57,5 @@ vim.api.nvim_set_hl(0, 'String', {
 -- })
 
 vim.api.nvim_set_hl(0, '@string', {
-	fg = "#ffade1"
+	fg = "#e9c343"
 })
