@@ -34,6 +34,7 @@ require("snacks").setup({
 	picker = { enabled = true, layout = "dropdown" }
 })
 require("mason").setup()
+require("mason-lspconfig").setup()
 require("oil").setup()
 require("typst-preview").setup({
 	open_cmd = "firefox %s"

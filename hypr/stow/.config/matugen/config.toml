@@ -67,10 +67,15 @@ post_hook = 'pywalfox update'
 
 [templates.zen-userChrome]
 input_path = './templates/zen-userChrome.css'
-output_path = '~/.zen/sewxf7vd.Default (release)/chrome/userChrome.css'
+output_path = '~/.zen/0z3de69z.Default (release)/chrome/userChrome.css'
 post_hook = 'pkill -SIGUSR1 zen-bin'
 
 [templates.zen-userContent]
 input_path = './templates/zen-userContent.css'
-output_path = '~/.zen/sewxf7vd.Default (release)/chrome/userContent.css'
+output_path = '~/.zen/0z3de69z.Default (release)/chrome/userContent.css'
 post_hook = 'pkill -SIGUSR1 zen-bin'
+
+[templates.obsidian]
+input_path = './templates/obsidian.css'
+output_path = '~/secondbrane/.obsidian/snippets/theme.css'
+
