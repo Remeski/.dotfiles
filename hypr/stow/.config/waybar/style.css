@@ -20,8 +20,8 @@ window#waybar {
 
 #window {
     margin: 0;
-    padding-left: 8;
-    padding-right: 8;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 button {
@@ -32,9 +32,11 @@ button {
 
 
 #workspaces button {
-    border-radius: 0;
-    padding: 4px 7px;
-    color: @on_surface;
+		margin: 5px 2px;
+    border-radius: 50px;
+    padding: 1px 7px;
+		background: alpha(@tertiary, 0.1);
+    color: transparent;
 }
 
 #workspaces button.focused {
@@ -45,6 +47,9 @@ button {
 #workspaces button.active {
     background-color: @primary;
     color: @on_primary;
+		min-width: 30px;
+		transition-property: all;
+		transition-duration: 0.1s;
 }
 
 #workspaces button.urgent {

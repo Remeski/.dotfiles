@@ -12,7 +12,7 @@ end
 
 function GetEntries()
 	local entries = {}
-	local wallpaper_dir = "/home/rmz/Pictures/Bgs/"
+	local wallpaper_dir = os.getenv("HOME") .. "/Pictures/Bgs/"
 
 	local modes = { "dark", "light" }
 	local types = { "scheme-content", "scheme-expressive", "scheme-fidelity", "scheme-fruit-salad", "scheme-monochrome",

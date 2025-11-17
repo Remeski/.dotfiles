@@ -41,7 +41,7 @@ post_hook = 'tmux source-file ~/.tmux/theme.conf'
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/colors.css'
-post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}; gsettings set org.gnome.desktop.color-scheme prefer-{{mode}};'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-<* if {{ is_dark_mode }}*>dark<* else *>light<* endif *>; gsettings set org.gnome.desktop.interface color-scheme <* if {{ is_dark_mode }}*>prefer-dark<* else *>prefer-light<* endif *>'
 
 [templates.gtk4]
 input_path = './templates/gtk-colors.css'
@@ -60,12 +60,17 @@ input_path = './templates/dunst'
 output_path = '~/.config/dunst/dunstrc'
 post_hook = 'dunstctl reload'
 
+[templates.pywalfox]
+input_path = './templates/pywalfox.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
 [templates.zen-userChrome]
 input_path = './templates/zen-userChrome.css'
-output_path = '~/.zen/sewxf7vd.Default (release)/chrome/userChrome.css'
+output_path = '~/.zen/0z3de69z.Default (release)/chrome/userChrome.css'
 post_hook = 'pkill -SIGUSR1 zen-bin'
 
 [templates.zen-userContent]
 input_path = './templates/zen-userContent.css'
-output_path = '~/.zen/sewxf7vd.Default (release)/chrome/userContent.css'
+output_path = '~/.zen/0z3de69z.Default (release)/chrome/userContent.css'
 post_hook = 'pkill -SIGUSR1 zen-bin'

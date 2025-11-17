@@ -9,14 +9,7 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "hyprland/workspaces": {
-		"format-icons": {
-				"1": "",
-				"2": "󰖟",
-				"9": "󰛳",
-				"10": "",
-				"default": "󰹑"
-		},
-		"format": "{id}"
+		"format": "{id}",
   },
   "battery": {
     "states": {
