@@ -31,7 +31,7 @@ function GetEntries()
 							Subtext = capitalize(string.sub(type, string.len("scheme-") + 1)) .. " | " .. capitalize(mode),
 							Text = filename,
 							Keywords = { filename, type, mode },
-							Value = "-t " .. type .. " -m " .. mode .. " image " .. line,
+							Value = "-t " .. type .. " -m " .. mode .. " image " .. line .. " && notify-send 'New Theme: " .. capitalize(string.sub(type, string.len("scheme-") + 1)) .. " - " .. filename .. " (" .. mode .. ")'" ,
 							Preview = line,
 						})
 					end

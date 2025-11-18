@@ -130,18 +130,18 @@
 
 [urgency_low]
 		timeout = 3
-		background = "#1d100c"
-		foreground = "#f7ddd6"
-		highlight = "#f56131"
+		background = "#101418"
+		foreground = "#e1e2e8"
+		highlight = "#184974"
 
 [urgency_normal]
 		timeout = 6
-		background = "#1d100c"
-		foreground = "#f7ddd6"
-		highlight = "#f56131"
+		background = "#101418"
+		foreground = "#e1e2e8"
+		highlight = "#184974"
 
 [urgency_critical]
 		timeout = 0
-		background = "#1d100c"
-		foreground = "#f7ddd6"
+		background = "#101418"
+		foreground = "#e1e2e8"
 		highlight = "#ffb4ab"

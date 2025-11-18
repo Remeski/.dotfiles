@@ -7,7 +7,7 @@ if [[ $# -eq 1 ]]; then
 else
 	zoxide query -l >> /tmp/search
 	find ~/ ~/coding/ ~/projects ~/random ~/hacking -mindepth 1 -maxdepth 3 -type d >> /tmp/search
-	selected=$(cat /tmp/search | sed "s|^$HOME/||" | fzf --reverse)
+	selected=$(cat /tmp/search | sed "s|^$HOME/||" | fzf --reverse --border=rounded --color=base16 --style=minimal --gutter=" ")
 	rm /tmp/search
 fi
 

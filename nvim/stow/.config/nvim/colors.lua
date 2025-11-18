@@ -1,61 +1,50 @@
 -- local config = {
---   base00 = "#1d100c",
---   base01 = "#100b0a",
---   base02 = "#ffb59f",
---   base03 = "#1e1715",
---   base04 = "#120a07",
---   base05 = "#f7ddd6",
---   base06 = "#150804",
---   base07 = "#1d100c",
+--   base00 = "#101418",
+--   base01 = "#0c0d0e",
+--   base02 = "#bac8db",
+--   base03 = "#18191b",
+--   base04 = "#0b0c0e",
+--   base05 = "#e1e2e8",
+--   base06 = "#0b0c0e",
+--   base07 = "#101418",
 --   base08 = "#1a0300",
---   base09 = "#e9c343",
---   base0A = "#ffb59f",
---   base0B = "#ffe082",
---   base0C = "#ffb59f",
---   base0D = "#180701",
---   base0E = "#000000",
---   base0F = "#f7ddd6",
+--   base09 = "#d6bee5",
+--   base0A = "#a0cafd",
+--   base0B = "#f2daff",
+--   base0C = "#a0cafd",
+--   base0D = "#040d15",
+--   base0E = "#d1e4ff",
+--   base0F = "#e1e2e8",
 -- }
 -- require('base16-colorscheme').setup(config)
 
-require('base16-colorscheme').setup({
-  base00 = "#1d100c",
-  base01 = "#170b08",
-  base02 = "#261814",
-  base03 = "#986e62",
-  base04 = "#e2bfb5",
-  base05 = "#f7ddd6",
-  base06 = "#f7ddd6",
-  base07 = "#79574e",
-  base08 = "#ffb4ab",
-  base09 = "#ff8e6c",
-  base0A = "#ffb59f",
-  base0B = "#ffb59f",
-  base0C = "#e9c343",
-  base0D = "#ffb59f",
-  base0E = "#ffddd3",
-  base0F = "#ffdad6",
-})
-
-vim.api.nvim_set_hl(0, 'Visual', {
-  bg = '#f56131',
-  fg = '#1d100c',
-})
-
--- vim.api.nvim_set_hl(0, 'Comment', {
--- 	fg = config.base03,
--- 	italic = false
+-- require('base16-colorscheme').setup({
+--   base00 = "#101418",
+--   base01 = "#0b0e13",
+--   base02 = "#191c20",
+--   base03 = "#717985",
+--   base04 = "#c3c7cf",
+--   base05 = "#bac8db",
+--   base06 = "#e1e2e8",
+--   base07 = "#59606a",
+--   base08 = "#ffb4ab",
+--   base09 = "#d6bee5",
+--   base0A = "#d6e4f7",
+--   base0B = "#bac8db",
+--   base0C = "#d6bee5",
+--   base0D = "#b9d8fe",
+--   base0E = "#d6e4f7",
+--   base0F = "#ffdad6",
 -- })
 
-vim.api.nvim_set_hl(0, 'String', {
-	fg = "#e9c343"
-})
+local colors = {
+	bg = "#101418",
+	fg = "#e1e2e8",
+	accent = "#a0cafd",
+	accent_variant = "#bac8db",
+	error = "#ffb4ab",
+	success = "#d6bee5",
+	warning = "#ffb4ab",
+}
 
--- vim.api.nvim_set_hl(0, '@comment', {
--- 	fg = config.base03,
--- 	italic = false
--- })
-
-vim.api.nvim_set_hl(0, '@string', {
-	fg = "#e9c343"
-})
+return colors

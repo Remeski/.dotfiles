@@ -5,7 +5,7 @@
   "modules-right": ["network#internet", "network#etremes", "pulseaudio", "battery"],
   "clock": {
 		"interval": 1,
-		"format": "{:%H:%M:%S}",
+		"format": "{:%d/%m - %H:%M}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "hyprland/workspaces": {
