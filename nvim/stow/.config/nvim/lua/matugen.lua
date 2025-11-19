@@ -195,6 +195,11 @@ function M.apply()
 	vim.api.nvim_set_hl(0, "TabLine", { bg = c.bg_light, fg = c.fg_dim })
 	vim.api.nvim_set_hl(0, "TabLineSel", { bg = c.accent, fg = c.bg })
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = c.bg })
+
+	-- Rust
+  vim.api.nvim_set_hl(0, "@lsp.type.attributeBracket.rust", { fg = c.fg_dim })
+  vim.api.nvim_set_hl(0, "@lsp.mod.attribute.rust", { fg = c.fg_dim })
+  vim.api.nvim_set_hl(0, "@lsp.typemod.attributeBracket.attribute.rust", { fg = c.fg_dim })
 end
 
 -- =====================================================================

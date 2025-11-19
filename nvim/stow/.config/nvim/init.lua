@@ -64,12 +64,12 @@ end)
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(_)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-		vim.keymap.set("n", "gf", vim.lsp.buf.format)
+		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 	end,
 })
 
-vim.keymap.set("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>")
-vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>")
+vim.keymap.set("n", "<leader>tt", "<CMD>Trouble diagnostics toggle<CR>")
+-- vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>")
 
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR><ESC>")
 

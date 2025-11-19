@@ -5,6 +5,7 @@
 - `hyprlock`
 - `hypridle`
 - `hyprshot`
+- `hyprpolkitagent`
 - `bluetui`
 - `pulsemixer`
 - `swww` (older `hyprpaper`)

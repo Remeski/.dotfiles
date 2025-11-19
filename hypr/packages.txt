@@ -6,3 +6,4 @@ hyprshot
 bluetui
 pulsemixer
 kitty
+hyprpolkitagent
