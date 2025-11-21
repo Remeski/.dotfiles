@@ -1,0 +1,22 @@
+{
+  "plugins": {
+    "base16-nvim": {
+      "rev": "a0d0806ae75ef1ef97d9fc650d96f1f28db241a5",
+      "src": "https://github.com/RRethy/base16-nvim"
+    },
+    "blink.cmp": [],
+    "gruvbox.nvim": [],
+    "mason-lspconfig.nvim": [],
+    "mason.nvim": [],
+    "nvim-lspconfig": [],
+    "nvim-treesitter": [],
+    "oil.nvim": [],
+    "snacks.nvim": [],
+    "trouble.nvim": {
+      "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "src": "https://github.com/folke/trouble.nvim"
+    },
+    "typst-preview.nvim": [],
+    "vim-fugitive": []
+  }
+}
