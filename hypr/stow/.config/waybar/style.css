@@ -53,7 +53,7 @@ button {
 }
 
 #workspaces button.urgent {
-    background-color: @alert;
+    background-color: @error;
     color: @on_alert;
 }
 
