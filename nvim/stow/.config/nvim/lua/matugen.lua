@@ -200,6 +200,16 @@ function M.apply()
   vim.api.nvim_set_hl(0, "@lsp.type.attributeBracket.rust", { fg = c.fg_dim })
   vim.api.nvim_set_hl(0, "@lsp.mod.attribute.rust", { fg = c.fg_dim })
   vim.api.nvim_set_hl(0, "@lsp.typemod.attributeBracket.attribute.rust", { fg = c.fg_dim })
+
+	-- Python
+  vim.api.nvim_set_hl(0, "pythonInclude", { fg = c.accent })
+  vim.api.nvim_set_hl(0, "pythonAttribute", { fg = c.accent_variant })
+  vim.api.nvim_set_hl(0, "pythonRepeat", { fg = c.accent_light })
+  vim.api.nvim_set_hl(0, "pythonString", { fg = c.accent_variant })
+  vim.api.nvim_set_hl(0, "pythonNumber", { fg = c.warning_light })
+  vim.api.nvim_set_hl(0, "pythonBuiltin", { fg = c.accent })
+  vim.api.nvim_set_hl(0, "pythonOperator", { fg = c.success_dark })
+
 end
 
 -- =====================================================================
