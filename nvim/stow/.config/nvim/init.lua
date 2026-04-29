@@ -26,7 +26,7 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/tpope/vim-fugitive" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	-- { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/folke/trouble.nvim" }
 })
 
@@ -40,14 +40,14 @@ require("typst-preview").setup({
 	open_cmd = "firefox %s"
 })
 require("blink.cmp").setup({
-	fuzzy = { implementation = "rust" }
+	fuzzy = { implementation = "rust", prebuilt_binaries = { ignore_version_mismatch = true } }
 })
-require("nvim-treesitter").setup()
+-- require("nvim-treesitter").setup()
 require("trouble").setup()
 
 require("matugen")
 
-vim.lsp.enable({ "lua_ls", "tinymist", "pyright", "rust_analyzer", "ts_ls" })
+vim.lsp.enable({ "lua_ls", "tinymist", "pylsp", "rust_analyzer" })
 
 local picker = require("snacks.picker")
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>")
@@ -76,6 +76,14 @@ vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR><ESC>")
 -- theme
 vim.pack.add({
 	{ src = "https://github.com/shaunsingh/nord.nvim" },
-	{ src = "https://github.com/ellisonleao/gruvbox.nvim" };
+	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
 	-- { src = "https://github.com/RRethy/base16-nvim" }
 })
+
+-- vim.cmd("colorscheme default")
+local pylaunch = require("pylaunch")
+pylaunch.setup()
+
+vim.keymap.set("n", "<leader>ph", function () pylaunch.run_current_file({ hidden = true }) end)
+vim.keymap.set("n", "<leader>pp", "<CMD>PyLaunchStart<CR>")
+vim.keymap.set("n", "<leader>ps", "<CMD>PyLaunchStop<CR>")
