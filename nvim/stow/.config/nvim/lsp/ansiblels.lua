@@ -1,3 +1,3 @@
-vim.lsp.config("ansiblels", {
+return {
 	filetypes = { "yaml" }
-})
+}

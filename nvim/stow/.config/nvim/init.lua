@@ -1,4 +1,4 @@
--- options
+-- OPTIONS
 vim.g.mapleader = " "
 vim.o.relativenumber = true
 vim.o.winborder = "rounded"
@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- plugins
+-- PLUGINS
 vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -45,10 +45,29 @@ require("blink.cmp").setup({
 -- require("nvim-treesitter").setup()
 require("trouble").setup()
 
+local pylaunch = require("pylaunch")
+pylaunch.setup()
+
+-- COLORS
 require("matugen")
+vim.pack.add({
+	{ src = "https://github.com/shaunsingh/nord.nvim" },
+	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
+	-- { src = "https://github.com/RRethy/base16-nvim" }
+})
+
+-- vim.cmd("colorscheme default")
 
 vim.lsp.enable({ "lua_ls", "tinymist", "pylsp", "rust_analyzer" })
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(_)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+	end,
+})
 
+
+-- BINDS
 local picker = require("snacks.picker")
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>")
 vim.keymap.set("n", "<leader>sf", picker.files)
@@ -61,29 +80,11 @@ vim.keymap.set("n", "<leader>sn", function()
 	picker.files({ cwd = vim.fn.stdpath("config") })
 end)
 
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(_)
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-		vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-	end,
-})
-
 vim.keymap.set("n", "<leader>tt", "<CMD>Trouble diagnostics toggle<CR>")
 -- vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>")
-
-vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR><ESC>")
-
--- theme
-vim.pack.add({
-	{ src = "https://github.com/shaunsingh/nord.nvim" },
-	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
-	-- { src = "https://github.com/RRethy/base16-nvim" }
-})
-
--- vim.cmd("colorscheme default")
-local pylaunch = require("pylaunch")
-pylaunch.setup()
 
 vim.keymap.set("n", "<leader>ph", function () pylaunch.run_current_file({ hidden = true }) end)
 vim.keymap.set("n", "<leader>pp", "<CMD>PyLaunchStart<CR>")
 vim.keymap.set("n", "<leader>ps", "<CMD>PyLaunchStop<CR>")
+
+vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR><ESC>")
