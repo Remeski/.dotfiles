@@ -28,7 +28,9 @@ vim.pack.add({
 	{ src = "https://github.com/tpope/vim-fugitive" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	-- { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/folke/trouble.nvim" }
+	{ src = "https://github.com/folke/trouble.nvim" },
+	{ src = "https://github.com/ThePrimeagen/harpoon",          version = "harpoon2" },
+	{ src = "https://gtihub.com/nvim-lua/plenary.nvim" },
 })
 
 require("snacks").setup({
@@ -46,6 +48,7 @@ require("blink.cmp").setup({
 })
 -- require("nvim-treesitter").setup()
 require("trouble").setup()
+require("harpoon").setup()
 
 local pylaunch = require("pylaunch")
 pylaunch.setup()
@@ -85,8 +88,17 @@ end)
 vim.keymap.set("n", "<leader>tt", "<CMD>Trouble diagnostics toggle<CR>")
 -- vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>")
 
-vim.keymap.set("n", "<leader>ph", function () pylaunch.run_current_file({ hidden = true }) end)
+vim.keymap.set("n", "<leader>ph", function() pylaunch.run_current_file({ hidden = true }) end)
 vim.keymap.set("n", "<leader>pp", "<CMD>PyLaunchStart<CR>")
 vim.keymap.set("n", "<leader>ps", "<CMD>PyLaunchStop<CR>")
 
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR><ESC>")
+
+local harpoon = require("harpoon");
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<C-h>", function() harpoon:list():select(4) end)
