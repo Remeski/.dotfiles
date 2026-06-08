@@ -4,7 +4,7 @@ Cache = true
 HideFromProviderlist = false
 Description = "lua test menu"
 SearchName = true
-Action = "matugen --contrast 0.0 %VALUE%"
+Action = "matugen --contrast 0.0 --prefer value %VALUE%"
 
 local function capitalize(str)
 	return string.upper(string.sub(str, 1, 1)) .. string.sub(str, 2)

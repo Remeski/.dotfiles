@@ -33,7 +33,7 @@ button {
 
 #workspaces button {
 		margin: 5px 2px;
-    border-radius: 50px;
+    border-radius: 0px;
     padding: 1px 7px;
 		background: alpha(@surface, 0.1);
     color: @on_surface;

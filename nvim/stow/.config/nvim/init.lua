@@ -26,6 +26,7 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/tpope/vim-fugitive" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	-- { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/folke/trouble.nvim" }
 })
@@ -33,6 +34,7 @@ vim.pack.add({
 require("snacks").setup({
 	picker = { enabled = true, layout = "dropdown" }
 })
+require("gitsigns").setup({})
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("oil").setup()
@@ -75,7 +77,7 @@ vim.keymap.set("n", "<leader>sg", picker.git_files)
 vim.keymap.set("n", "<leader>ss", picker.lsp_symbols)
 vim.keymap.set("n", "<leader>sG", picker.grep)
 vim.keymap.set("n", "<leader>sh", picker.help)
-vim.keymap.set("n", "<leader><leader>", picker.smart)
+vim.keymap.set("n", "<leader><leader>", picker.buffers)
 vim.keymap.set("n", "<leader>sn", function()
 	picker.files({ cwd = vim.fn.stdpath("config") })
 end)

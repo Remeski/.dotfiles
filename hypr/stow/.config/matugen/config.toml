@@ -60,10 +60,10 @@ input_path = './templates/dunst'
 output_path = '~/.config/dunst/dunstrc'
 post_hook = 'dunstctl reload'
 
-[templates.pywalfox]
-input_path = './templates/pywalfox.json'
-output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update'
+# [templates.pywalfox]
+# input_path = './templates/pywalfox.json'
+# output_path = '~/.cache/wal/colors.json'
+# post_hook = 'pywalfox update'
 
 [templates.zen-userChrome]
 input_path = './templates/zen-userChrome.css'
