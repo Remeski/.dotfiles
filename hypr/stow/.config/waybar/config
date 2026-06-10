@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network#internet", "network#etremes", "pulseaudio", "battery"],
+  "modules-right": ["custom/screen-record", "network#internet", "network#etremes", "pulseaudio", "battery"],
   "clock": {
 		"interval": 1,
 		"format": "{:%d/%m - %H:%M}",
@@ -54,5 +54,10 @@
       "car": "",
       "default": ["", ""]
     }
-  }
+  },
+	"custom/screen-record": {
+		"exec": "~/.local/scripts/screen-record.sh waybar",
+		"on-click": "~/.local/scripts/screen-record.sh",
+		"signal": 10
+	}
 }
