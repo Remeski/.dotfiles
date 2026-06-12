@@ -12,7 +12,7 @@
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.6);
     color: @on_background;
     transition-property: background-color;
     transition-duration: 0.1s;
