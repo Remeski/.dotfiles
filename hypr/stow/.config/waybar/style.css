@@ -19,7 +19,7 @@ window#waybar {
 }
 
 #window {
-    margin: 0;
+    margin: 0px;
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -32,7 +32,7 @@ button {
 
 
 #workspaces button {
-		margin: 5px 2px;
+		margin: 0px 0px;
     border-radius: 0px;
     padding: 1px 7px;
 		background: alpha(@surface, 0.1);
@@ -47,7 +47,7 @@ button {
 #workspaces button.active {
     background-color: @primary;
     color: @on_primary;
-		min-width: 30px;
+		min-width: 25px;
 		transition-property: all;
 		transition-duration: 0.1s;
 }
