@@ -23,14 +23,14 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
-	{ src = "https://github.com/saghen/blink.cmp" },
+	{ src = "https://github.com/saghen/blink.cmp", version = "v1" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
 	{ src = "https://github.com/tpope/vim-fugitive" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	-- { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/folke/trouble.nvim" },
 	{ src = "https://github.com/ThePrimeagen/harpoon",          version = "harpoon2" },
-	{ src = "https://gtihub.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 })
 
 require("snacks").setup({
@@ -46,7 +46,12 @@ require("typst-preview").setup({
 require("blink.cmp").setup({
 	fuzzy = { implementation = "rust", prebuilt_binaries = { ignore_version_mismatch = true } }
 })
--- require("nvim-treesitter").setup()
+require("nvim-treesitter").setup()
+require("nvim-treesitter.configs").setup({
+	highlight = {
+		enable = true
+	}
+})
 require("trouble").setup()
 require("harpoon").setup()
 
@@ -63,7 +68,7 @@ vim.pack.add({
 
 -- vim.cmd("colorscheme default")
 
-vim.lsp.enable({ "lua_ls", "tinymist", "pylsp", "rust_analyzer" })
+vim.lsp.enable({ "lua_ls", "tinymist", "pylsp", "rust_analyzer", "clangd" })
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(_)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -101,7 +106,7 @@ vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon
 vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(4) end)
+vim.keymap.set("n", "<C-;>", function() harpoon:list():select(4) end)
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
