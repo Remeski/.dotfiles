@@ -4,6 +4,12 @@
                         ((hex >> 8) & 0xFF) / 255.0f, \
                         (hex & 0xFF) / 255.0f }
 /* appearance */
+static const int smartgaps                 = 1;  /* 1 means no outer gap when there is only one window */
+static const unsigned int gappih           = 5; /* horiz inner gap between windows */
+static const unsigned int gappiv           = 5; /* vert inner gap between windows */
+static const unsigned int gappoh           = 5; /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov           = 5; /* vert outer gap between windows and screen edge */
+static const int monoclegaps               = 0;  /* 1 means outer gaps in monocle layout */
 static const int sloppyfocus               = 0;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
